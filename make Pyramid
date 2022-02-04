@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int N;
+
+int main(void)
+{
+	/*
+	    *
+	   ***
+	  *****
+	 *******
+	*********
+	*/
+
+	cin >> N ;                          // 피라미드 층 입력
+	cout << "-----------------"<<endl;
+
+	int i;
+
+	for (i = 1; i <= N; i++)            // i 는 피라미드 층 수만큼 반복
+	{
+		for (int j = i; j <= N-1; j++)    // 피라미드 모양을 위한 space 입력
+		{
+			cout << " ";
+		}
+		
+		for (int k = 1; k < (2*N); k++)   // * 입력
+		{
+			cout << "*";
+			if (k == (i * 2) - 1)           // * 입력 시 다음 층으로 이동하기 위한 
+				break;
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
